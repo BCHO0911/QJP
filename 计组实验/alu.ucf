@@ -1,0 +1,98 @@
+# Clock and Reset
+NET "clk" LOC = U9;
+NET "clk" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "rst" LOC = U10;
+NET "rst" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# INPUT Switch (????)
+NET "INPUT[15]" LOC = J6;
+NET "INPUT[14]" LOC = J7;
+NET "INPUT[13]" LOC = K2;
+NET "INPUT[12]" LOC = K7;
+NET "INPUT[11]" LOC = M1;
+NET "INPUT[10]" LOC = N1;
+NET "INPUT[9]"  LOC = N2;
+NET "INPUT[8]"  LOC = R1;
+NET "INPUT[7]"  LOC = R4;
+NET "INPUT[6]"  LOC = U1;
+NET "INPUT[5]"  LOC = V2;
+NET "INPUT[4]"  LOC = V3;
+NET "INPUT[3]"  LOC = V4;
+NET "INPUT[2]"  LOC = U8;
+NET "INPUT[1]"  LOC = R7;
+NET "INPUT[0]"  LOC = T7;
+
+# ==============================
+# ?? ????:OUTPUT LED ????
+# ???? LED = OUTPUT[0]
+# ???? LED = OUTPUT[15]
+# ==============================
+NET "OUTPUT[0]"  LOC = D10;
+NET "OUTPUT[1]"  LOC = E10;
+NET "OUTPUT[2]"  LOC = A11;
+NET "OUTPUT[3]"  LOC = B11;
+NET "OUTPUT[4]"  LOC = C11;
+NET "OUTPUT[5]"  LOC = D11;
+NET "OUTPUT[6]"  LOC = E11;
+NET "OUTPUT[7]"  LOC = F11;
+NET "OUTPUT[8]"  LOC = A12;
+NET "OUTPUT[9]"  LOC = E12;
+NET "OUTPUT[10]" LOC = F12;
+NET "OUTPUT[11]" LOC = A13;
+NET "OUTPUT[12]" LOC = B13;
+NET "OUTPUT[13]" LOC = D13;
+NET "OUTPUT[14]" LOC = E13;
+NET "OUTPUT[15]" LOC = A14;
+
+# 7-Segment Display
+NET "stateCnt[6]" LOC = F8;
+NET "stateCnt[5]" LOC = E8;
+NET "stateCnt[4]" LOC = A8;
+NET "stateCnt[3]" LOC = F7;
+NET "stateCnt[2]" LOC = E7;
+NET "stateCnt[1]" LOC = D7;
+NET "stateCnt[0]" LOC = C7;
+
+# SRAM ADDR
+NET "ADDR[0]"  LOC = C17;
+NET "ADDR[1]"  LOC = C18;
+NET "ADDR[2]"  LOC = D16;
+NET "ADDR[3]"  LOC = D17;
+NET "ADDR[4]"  LOC = E15;
+NET "ADDR[5]"  LOC = E16;
+NET "ADDR[6]"  LOC = F14;
+NET "ADDR[7]"  LOC = F15;
+NET "ADDR[8]"  LOC = F17;
+NET "ADDR[9]"  LOC = F18;
+NET "ADDR[10]" LOC = G13;
+NET "ADDR[11]" LOC = G14;
+NET "ADDR[12]" LOC = G15;
+NET "ADDR[13]" LOC = G16;
+NET "ADDR[14]" LOC = H14;
+NET "ADDR[15]" LOC = H15;
+
+# SRAM DATA
+NET "DATA[0]"  LOC = J12;
+NET "DATA[1]"  LOC = J13;
+NET "DATA[2]"  LOC = J14;
+NET "DATA[3]"  LOC = J15;
+NET "DATA[4]"  LOC = J16;
+NET "DATA[5]"  LOC = J17;
+NET "DATA[6]"  LOC = K12;
+NET "DATA[7]"  LOC = K13;
+NET "DATA[8]"  LOC = K14;
+NET "DATA[9]"  LOC = K15;
+NET "DATA[10]" LOC = L15;
+NET "DATA[11]" LOC = L16;
+NET "DATA[12]" LOC = L17;
+NET "DATA[13]" LOC = L18;
+NET "DATA[14]" LOC = M13;
+NET "DATA[15]" LOC = M14;
+
+# SRAM Control
+NET "RAM1_EN" LOC = M15;
+NET "RAM1_OE" LOC = M16;
+NET "RAM1_WE" LOC = M18;
+
+# Unused Signal
+NET "dbc" LOC = C14;

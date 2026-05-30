@@ -6,7 +6,9 @@
 # 时钟与复位
 NET "clk"       LOC = U9;
 NET "rst"       LOC = U11;
+NET "rst"       PULLUP;
 NET "ctrl_r"    LOC = U10;
+NET "ctrl_r"    PULLUP;
 NET "ctrl_r"    CLOCK_DEDICATED_ROUTE = "FALSE";
 
 # 拨码开关输入 (16位)

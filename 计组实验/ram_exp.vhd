@@ -51,6 +51,11 @@ architecture Behavioral of ram_exp is
     signal tick_cnt   : STD_LOGIC_VECTOR (18 downto 0) := (others => '0');
     signal tick_10ms  : STD_LOGIC := '0';
 
+    -- 状态指示灯：LIGHT[15] 用来指示系统是否在工作
+    -- 空闲=常亮，写模式=灭，读模式=闪烁
+    signal light15    : STD_LOGIC := '1';
+    signal rd_blink   : STD_LOGIC := '1';  -- 读模式闪烁翻转
+
 begin
 
     -- ========================================================
@@ -83,12 +88,15 @@ begin
             data_reg  <= x"0000";
             read_data <= x"0000";
             count_reg <= x"0000";
+            light15   <= '1';
+            rd_blink  <= '1';
         elsif rising_edge(CLK) then
             if tick_10ms = '1' then
                 case cur_state is
 
                     -- ========== 空闲状态 ==========
                     when S_IDLE =>
+                        light15 <= '1';  -- 运行指示灯亮
                         if ctrl_r = '0' then
                             -- 写模式：锁存当前开关数据，准备写入
                             addr_reg <= Input_data;
@@ -103,14 +111,17 @@ begin
 
                     -- ========== 写准备 ==========
                     when S_WR_SETUP =>
+                        light15 <= '0';  -- 写模式指示灯灭
                         cur_state <= S_WR_EXEC;
 
                     -- ========== 写执行：完成一个写周期 ==========
                     when S_WR_EXEC =>
+                        light15 <= '0';
                         cur_state <= S_WR_DISPLAY;
 
                     -- ========== 写显示 ==========
                     when S_WR_DISPLAY =>
+                        light15 <= '0';
                         if ctrl_r = '0' then
                             -- 保持写模式，等待用户修改开关数据
                             cur_state <= S_IDLE;
@@ -123,6 +134,8 @@ begin
 
                     -- ========== 读准备 ==========
                     when S_RD_SETUP =>
+                        rd_blink <= not rd_blink;  -- 读模式闪烁
+                        light15 <= rd_blink;
                         if count_reg >= x"000A" then
                             -- 已读完 10 个单元(地址 0~9)，回到空闲
                             cur_state <= S_IDLE;
@@ -132,6 +145,7 @@ begin
 
                     -- ========== 读执行：完成一个读周期 ==========
                     when S_RD_EXEC =>
+                        light15 <= rd_blink;
                         -- 在节拍到来前 DATA 已连接到 read_data，此时锁存
                         read_data <= DATA;
                         count_reg <= count_reg + 1;
@@ -140,6 +154,7 @@ begin
 
                     -- ========== 读显示 ==========
                     when S_RD_DISPLAY =>
+                        light15 <= rd_blink;
                         -- 显示一个节拍后继续读下一个
                         cur_state <= S_RD_SETUP;
 
