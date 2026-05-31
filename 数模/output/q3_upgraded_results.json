@@ -1,0 +1,185 @@
+{
+  "sample_recommendations": {
+    "1": {
+      "pareto_count": 6,
+      "recommendations": [
+        {
+          "type": "A-最省钱",
+          "tcm_level": 3,
+          "tcm_name": "强化调理",
+          "tcm_methods": "饮食调理+穴位按摩+八段锦+中药代茶饮（高强度）",
+          "activity_level": 1,
+          "activity_name": "低强度",
+          "sessions_per_week": 1,
+          "monthly_reduction_pct": 3.0,
+          "total_reduction": 10.69,
+          "total_cost": 852,
+          "final_tanshi": 53.31
+        },
+        {
+          "type": "C-性价比最优",
+          "tcm_level": 3,
+          "tcm_name": "强化调理",
+          "tcm_methods": "饮食调理+穴位按摩+八段锦+中药代茶饮（高强度）",
+          "activity_level": 1,
+          "activity_name": "低强度",
+          "sessions_per_week": 10,
+          "monthly_reduction_pct": 8.0,
+          "total_reduction": 25.19,
+          "total_cost": 1500,
+          "final_tanshi": 38.81
+        },
+        {
+          "type": "C-性价比最优",
+          "tcm_level": 3,
+          "tcm_name": "强化调理",
+          "tcm_methods": "饮食调理+穴位按摩+八段锦+中药代茶饮（高强度）",
+          "activity_level": 1,
+          "activity_name": "低强度",
+          "sessions_per_week": 10,
+          "monthly_reduction_pct": 8.0,
+          "total_reduction": 25.19,
+          "total_cost": 1500,
+          "final_tanshi": 38.81
+        }
+      ]
+    },
+    "2": {
+      "pareto_count": 7,
+      "recommendations": [
+        {
+          "type": "A-最省钱",
+          "tcm_level": 1,
+          "tcm_name": "基础调理",
+          "tcm_methods": "饮食调理+穴位按摩（低强度）",
+          "activity_level": 1,
+          "activity_name": "低强度",
+          "sessions_per_week": 1,
+          "monthly_reduction_pct": 3.0,
+          "total_reduction": 9.69,
+          "total_cost": 252,
+          "final_tanshi": 48.31
+        },
+        {
+          "type": "B-效果优先",
+          "tcm_level": 1,
+          "tcm_name": "基础调理",
+          "tcm_methods": "饮食调理+穴位按摩（低强度）",
+          "activity_level": 2,
+          "activity_name": "中强度",
+          "sessions_per_week": 10,
+          "monthly_reduction_pct": 11.0,
+          "total_reduction": 29.18,
+          "total_cost": 1380,
+          "final_tanshi": 28.82
+        },
+        {
+          "type": "C-性价比最优",
+          "tcm_level": 1,
+          "tcm_name": "基础调理",
+          "tcm_methods": "饮食调理+穴位按摩（低强度）",
+          "activity_level": 2,
+          "activity_name": "中强度",
+          "sessions_per_week": 1,
+          "monthly_reduction_pct": 6.0,
+          "total_reduction": 17.99,
+          "total_cost": 300,
+          "final_tanshi": 40.01
+        }
+      ]
+    },
+    "3": {
+      "pareto_count": 5,
+      "recommendations": [
+        {
+          "type": "A-最省钱",
+          "tcm_level": 2,
+          "tcm_name": "中度调理",
+          "tcm_methods": "饮食调理+穴位按摩+八段锦（中强度）",
+          "activity_level": 1,
+          "activity_name": "低强度",
+          "sessions_per_week": 1,
+          "monthly_reduction_pct": 3.0,
+          "total_reduction": 9.85,
+          "total_cost": 552,
+          "final_tanshi": 49.15
+        },
+        {
+          "type": "B-效果优先",
+          "tcm_level": 2,
+          "tcm_name": "中度调理",
+          "tcm_methods": "饮食调理+穴位按摩+八段锦（中强度）",
+          "activity_level": 2,
+          "activity_name": "中强度",
+          "sessions_per_week": 10,
+          "monthly_reduction_pct": 11.0,
+          "total_reduction": 29.68,
+          "total_cost": 1680,
+          "final_tanshi": 29.32
+        },
+        {
+          "type": "C-性价比最优",
+          "tcm_level": 2,
+          "tcm_name": "中度调理",
+          "tcm_methods": "饮食调理+穴位按摩+八段锦（中强度）",
+          "activity_level": 3,
+          "activity_name": "高强度",
+          "sessions_per_week": 1,
+          "monthly_reduction_pct": 9.0,
+          "total_reduction": 25.5,
+          "total_cost": 672,
+          "final_tanshi": 33.5
+        }
+      ]
+    }
+  },
+  "all_patient_summary": {
+    "total_patients": 278,
+    "tcm_level_dist": {
+      "1": 100,
+      "3": 90,
+      "2": 88
+    },
+    "activity_level_dist": {
+      "2": 171,
+      "1": 92,
+      "3": 15
+    },
+    "avg_cost": 724.0575539568346,
+    "avg_reduction": 19.27814969472666,
+    "max_cost": 1500.0,
+    "min_cost": 252.0
+  },
+  "age_group_stats": {
+    "1": {
+      "count": 55,
+      "avg_cost": 648.2181818181818,
+      "avg_reduction": 20.018377708236326,
+      "mode_activity": 2
+    },
+    "2": {
+      "count": 54,
+      "avg_cost": 678.4444444444445,
+      "avg_reduction": 19.834725249682336,
+      "mode_activity": 2
+    },
+    "3": {
+      "count": 56,
+      "avg_cost": 632.3571428571429,
+      "avg_reduction": 18.18148588965675,
+      "mode_activity": 2
+    },
+    "4": {
+      "count": 60,
+      "avg_cost": 646.8,
+      "avg_reduction": 18.49651078635885,
+      "mode_activity": 2
+    },
+    "5": {
+      "count": 53,
+      "avg_cost": 1033.5849056603774,
+      "avg_reduction": 19.986524918789772,
+      "mode_activity": 1
+    }
+  }
+}

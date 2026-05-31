@@ -1,0 +1,115 @@
+{
+  "tanshi_key_indicators": [
+    "adl_item2",
+    "bmi",
+    "non_hdl",
+    "iadl_item1",
+    "tc_abnormal",
+    "adl_item4",
+    "glucose",
+    "glucose_abnormal",
+    "iadl_item3",
+    "hdl_c",
+    "ldl_c",
+    "drinking",
+    "age_group",
+    "tg"
+  ],
+  "hyperlipidemia_key_indicators": [
+    "abnormal_count",
+    "non_hdl",
+    "ldl_c",
+    "uric_acid",
+    "tc_abnormal",
+    "tg",
+    "tg_abnormal",
+    "hdl_c",
+    "tc",
+    "tc_hdl_ratio"
+  ],
+  "constitution_or_values": [
+    {
+      "constitution": "const_3",
+      "coefficient": 0.17941817064003102,
+      "OR": 1.1965209895146314
+    },
+    {
+      "constitution": "const_1",
+      "coefficient": 0.09623887864030535,
+      "OR": 1.1010220432313003
+    },
+    {
+      "constitution": "const_8",
+      "coefficient": 0.07948038640606217,
+      "OR": 1.0827243232059574
+    },
+    {
+      "constitution": "const_6",
+      "coefficient": 0.012956278820332581,
+      "OR": 1.0130405750625677
+    },
+    {
+      "constitution": "const_2",
+      "coefficient": 0.011537421660198222,
+      "OR": 1.0116042344112073
+    },
+    {
+      "constitution": "const_5",
+      "coefficient": -0.040714795570537074,
+      "OR": 0.9601029165079016
+    },
+    {
+      "constitution": "const_4",
+      "coefficient": -0.06669398301594172,
+      "OR": 0.9354814307450918
+    },
+    {
+      "constitution": "const_9",
+      "coefficient": -0.13212228480499966,
+      "OR": 0.8762338384436245
+    },
+    {
+      "constitution": "const_7",
+      "coefficient": -0.16333766948243708,
+      "OR": 0.8493043558277462
+    }
+  ],
+  "constitution_rf_importance": [
+    {
+      "feature": "pinghe",
+      "importance": 0.009772956084044564
+    },
+    {
+      "feature": "yinxu",
+      "importance": 0.008713291191112188
+    },
+    {
+      "feature": "xueyu",
+      "importance": 0.008393866999587475
+    },
+    {
+      "feature": "yangxu",
+      "importance": 0.007601253560715379
+    },
+    {
+      "feature": "tebing",
+      "importance": 0.0073955717417489185
+    },
+    {
+      "feature": "shire",
+      "importance": 0.007256718479383046
+    },
+    {
+      "feature": "qiyu",
+      "importance": 0.006936008406126428
+    },
+    {
+      "feature": "tanshi",
+      "importance": 0.006741415848128981
+    },
+    {
+      "feature": "qixu",
+      "importance": 0.006513764531912643
+    }
+  ]
+}

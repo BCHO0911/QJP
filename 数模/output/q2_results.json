@@ -1,0 +1,88 @@
+{
+  "risk_distribution": {
+    "1": 540,
+    "0": 232,
+    "2": 228
+  },
+  "model_results": {
+    "RandomForest": {
+      "accuracy": 0.85,
+      "f1_macro": 0.8369977372841131
+    },
+    "GradientBoosting": {
+      "accuracy": 0.908,
+      "f1_macro": 0.9034211536964912
+    },
+    "DecisionTree": {
+      "accuracy": 0.858,
+      "f1_macro": 0.8489607105953138
+    }
+  },
+  "dt_top_features": [
+    {
+      "feature": "tanshi_x_activity",
+      "importance": 0.37629609816593146
+    },
+    {
+      "feature": "abnormal_count",
+      "importance": 0.31085226859736853
+    },
+    {
+      "feature": "tanshi",
+      "importance": 0.19476976882139455
+    },
+    {
+      "feature": "uric_acid",
+      "importance": 0.052615094053051294
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.04806376432976834
+    },
+    {
+      "feature": "ldl_c",
+      "importance": 0.012756247311412157
+    },
+    {
+      "feature": "glucose",
+      "importance": 0.0030019332163406217
+    },
+    {
+      "feature": "non_hdl",
+      "importance": 0.0014594031149054642
+    },
+    {
+      "feature": "tc",
+      "importance": 0.00018542238982752912
+    },
+    {
+      "feature": "age_group",
+      "importance": 0.0
+    },
+    {
+      "feature": "tg_abnormal",
+      "importance": 0.0
+    },
+    {
+      "feature": "ldl_abnormal",
+      "importance": 0.0
+    },
+    {
+      "feature": "tc_abnormal",
+      "importance": 0.0
+    },
+    {
+      "feature": "hdl_abnormal",
+      "importance": 0.0
+    },
+    {
+      "feature": "tc_hdl_ratio",
+      "importance": 0.0
+    }
+  ],
+  "thresholds": {
+    "tanshi_high_threshold": 37.0,
+    "tanshi_mid_threshold": 32.0,
+    "activity_high_threshold": 47.0
+  }
+}
