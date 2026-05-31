@@ -12,20 +12,86 @@
 \usepackage{enumitem}
 \usepackage{bm}
 \usepackage{color}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{indentfirst}
 
-\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+% ============================================================
+% 页面设置（匹配参考PDF格式）
+% ============================================================
+\geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+
+% 页眉页脚：仅页码居中（与参考PDF一致）
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{\small 中老年人群高血脂症的风险预警及干预方案优化}
-\fancyfoot[C]{\thepage}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
 
+% ============================================================
+% 字体与间距（匹配参考PDF）
+% ============================================================
+% 1.5倍行距
+\onehalfspacing
+
+% 首行缩进2字符
 \setlength{\parindent}{2em}
-\setlength{\parskip}{0.5em}
-\setlist[itemize]{leftmargin=2em}
-\setlist[enumerate]{leftmargin=2em}
 
+% 段间距（与参考PDF一致，较小间距）
+\setlength{\parskip}{0.2em}
+
+% 公式与正文间距
+\setlength{\abovedisplayskip}{8pt}
+\setlength{\belowdisplayskip}{8pt}
+\setlength{\abovedisplayshortskip}{6pt}
+\setlength{\belowdisplayshortskip}{6pt}
+
+% ============================================================
+% 标题格式（匹配参考PDF风格）
+% ============================================================
+% 一级标题：居中、黑体、三号、加粗
+\titleformat{\section}
+  {\centering\heiti\bfseries\Large}
+  {\thesection}{1em}{}
+
+% 二级标题：左对齐、黑体、四号、加粗
+\titleformat{\subsection}
+  {\heiti\bfseries\large}
+  {\thesubsection}{0.5em}{}
+
+% 三级标题：左对齐、宋体加粗、小四
+\titleformat{\subsubsection}
+  {\bfseries\zihao{-4}}
+  {\thesubsubsection}{0.5em}{}
+
+% 标题间距
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1.0ex plus 0.3ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.4ex minus 0.2ex}{0.8ex plus 0.2ex}
+\titlespacing*{\subsubsection}{0pt}{1.0ex plus 0.3ex minus 0.2ex}{0.6ex plus 0.2ex}
+
+% ============================================================
+% 列表格式（紧凑排列，与参考PDF一致）
+% ============================================================
+\setlist[itemize]{leftmargin=2.5em,itemsep=0.3em,parsep=0.2em,topsep=0.5em}
+\setlist[enumerate]{leftmargin=2.5em,itemsep=0.3em,parsep=0.2em,topsep=0.5em}
+
+% ============================================================
+% 图表格式
+% ============================================================
+% 图标题：居中、五号、下方
+\captionsetup[figure]{justification=centering,font=small,skip=8pt}
+% 表标题：居中、五号、上方
+\captionsetup[table]{justification=centering,font=small,skip=6pt}
+
+% ============================================================
+% 其他
+% ============================================================
 \newtheorem{definition}{定义}
 \newtheorem{theorem}{定理}
+
+% Section 编号格式：中文"一、二、三"（与参考PDF一致）
+\renewcommand{\thesection}{\chinese{section}、}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
 \begin{document}
 
@@ -59,7 +125,7 @@
 \newpage
 
 % ============================================================
-% 目录
+% 目录（与参考PDF格式一致）
 % ============================================================
 \tableofcontents
 \newpage
