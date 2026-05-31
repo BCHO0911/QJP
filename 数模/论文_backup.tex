@@ -17,118 +17,98 @@
 \usepackage{indentfirst}
 
 % ============================================================
-% 页面设置（参考docx实测：1英寸边距）
+% 页面设置（匹配参考PDF格式）
 % ============================================================
 \geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
 
-% 页眉页脚：仅页码居中
+% 页眉页脚：仅页码居中（与参考PDF一致）
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
 % ============================================================
-% 字体（参考docx实测：正文宋体12pt，标题黑体）
+% 字体与间距（匹配参考PDF）
 % ============================================================
-\setCJKmainfont[BoldFont={SimHei}]{SimSun}
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}
+% 1.5倍行距
+\onehalfspacing
 
-% ============================================================
-% 行距与缩进（参考docx实测值：行距19.5pt/12pt=1.625x，首行缩进24.05pt=2字符宽度）
-% ============================================================
-% 实测行距: 19.5pt for 12pt text = 1.625x
-\renewcommand{\baselinestretch}{1.625}
-\normalfont\normalsize
-
-% 实测首行缩进: 24.05pt = exactly 2em at 12pt
+% 首行缩进2字符
 \setlength{\parindent}{2em}
 
-% 实测段间距: 正文段前7.85pt，段后0
-\setlength{\parskip}{0pt}
+% 段间距（与参考PDF一致，较小间距）
+\setlength{\parskip}{0.2em}
 
-% 公式间距
-\setlength{\abovedisplayskip}{6pt}
-\setlength{\belowdisplayskip}{6pt}
-\setlength{\abovedisplayshortskip}{4pt}
-\setlength{\belowdisplayshortskip}{4pt}
+% 公式与正文间距
+\setlength{\abovedisplayskip}{8pt}
+\setlength{\belowdisplayskip}{8pt}
+\setlength{\abovedisplayshortskip}{6pt}
+\setlength{\belowdisplayshortskip}{6pt}
 
 % ============================================================
-% 标题格式（参考docx实测值）
+% 标题格式（匹配参考PDF风格）
 % ============================================================
-% Section: 居中、黑体、14pt（实测值：177800 EMU = 14pt），不加粗
+% 一级标题：居中、黑体、三号、加粗
 \titleformat{\section}
-  {\centering\heiti\fontsize{14pt}{19.5pt}\selectfont}
+  {\centering\heiti\bfseries\Large}
   {\thesection}{1em}{}
 
-% Subsection: 左对齐、黑体、12pt（实测：152400 EMU = 12pt），不加粗
+% 二级标题：左对齐、黑体、四号、加粗
 \titleformat{\subsection}
-  {\heiti\fontsize{12pt}{19.5pt}\selectfont}
+  {\heiti\bfseries\large}
   {\thesubsection}{0.5em}{}
 
-% Subsubsection: 左对齐、加粗、小四
+% 三级标题：左对齐、宋体加粗、小四
 \titleformat{\subsubsection}
   {\bfseries\zihao{-4}}
   {\thesubsubsection}{0.5em}{}
 
-% 标题间距（实测：section段前18pt段后0，subsection段前18.4pt段后0）
-\titlespacing*{\section}{0pt}{18pt}{0pt}
-\titlespacing*{\subsection}{0pt}{18pt}{0pt}
-\titlespacing*{\subsubsection}{0pt}{12pt}{0pt}
+% 标题间距
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1.0ex plus 0.3ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.4ex minus 0.2ex}{0.8ex plus 0.2ex}
+\titlespacing*{\subsubsection}{0pt}{1.0ex plus 0.3ex minus 0.2ex}{0.6ex plus 0.2ex}
 
 % ============================================================
-% 列表格式（紧凑）
+% 列表格式（紧凑排列，与参考PDF一致）
 % ============================================================
-\setlist[itemize]{leftmargin=2em,itemsep=0.15em,parsep=0.1em,topsep=0.2em}
-\setlist[enumerate]{leftmargin=2em,itemsep=0.15em,parsep=0.1em,topsep=0.2em}
+\setlist[itemize]{leftmargin=2.5em,itemsep=0.3em,parsep=0.2em,topsep=0.5em}
+\setlist[enumerate]{leftmargin=2.5em,itemsep=0.3em,parsep=0.2em,topsep=0.5em}
 
 % ============================================================
 % 图表格式
 % ============================================================
-\captionsetup[figure]{justification=centering,font=small,skip=6pt}
-\captionsetup[table]{justification=centering,font=small,skip=4pt}
+% 图标题：居中、五号、下方
+\captionsetup[figure]{justification=centering,font=small,skip=8pt}
+% 表标题：居中、五号、上方
+\captionsetup[table]{justification=centering,font=small,skip=6pt}
 
 % ============================================================
-% 编号格式：中文"一、二、三"
+% 其他
 % ============================================================
+\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}
+
+% Section 编号格式：中文"一、二、三"（与参考PDF一致）
 \renewcommand{\thesection}{\chinese{section}、}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
-\newtheorem{definition}{定义}
-\newtheorem{theorem}{定理}
-
 \begin{document}
 
-% ============================================================
-% 标题页（与参考PDF一致：居中、加粗、大字号）
-% ============================================================
-\begin{titlepage}
-\vspace*{2cm}
-\begin{center}
-\heiti\bfseries\fontsize{22pt}{28pt}\selectfont
-中老年人群高血脂症的风险预警\\及干预方案优化
-\end{center}
-\vspace{1.5cm}
-\begin{center}
-\zihao{-3} 参赛队
-\end{center}
-\vfill
-\begin{center}
-\zihao{4} \today
-\end{center}
-\end{titlepage}
+\title{\heiti\Huge 中老年人群高血脂症的风险预警\\及干预方案优化}
+\author{\kaishu 参赛队}
+\date{\today}
+
+\maketitle
 \thispagestyle{empty}
 
 % ============================================================
-% 摘要（与参考PDF格式一致）
+% 摘要
 % ============================================================
 \newpage
 \begin{center}
-\heiti\bfseries\zihao{3} 摘\hspace{2em}要
+\heiti\Large 摘\quad 要
 \end{center}
-
-\vspace{0.5em}
 
 针对中老年人群高血脂症风险预警及干预方案优化问题，本文融合中医体质分类标签、痰湿体质特征量化指标、中老年人活动量表评分、血常规体检数据及高血脂症诊断标签，构建"体质辨识—风险预警—干预优化"三位一体的多维度数学模型框架，实现中老年高血脂症的精准风险分层与个性化干预方案设计。
 
