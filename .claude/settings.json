@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/全佳鹏/.claude/skills/word-document-processor/**)",
+      "Bash(pandoc \"数模/论文1.5.docx\" -o \"数模/_docx_tools/论文1.5.md\")",
+      "Bash(python C:/Users/全佳鹏/.claude/skills/word-document-processor/ooxml/scripts/unpack.py \"数模/论文1.5.docx\" \"数模/_unpacked_论文1.5\")",
+      "Bash(rm -f \"d:/temp_paper.docx\")",
+      "Bash(python C:/Users/全佳鹏/.claude/skills/word-document-processor/ooxml/scripts/pack.py \"数模/_unpacked_论文1.5\" \"d:/temp_paper.docx\")",
+      "Bash(rm -f \"d:/paper_final.docx\")",
+      "Bash(mv \"d:/temp_paper.docx\" \"d:/paper_final.docx\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}
