@@ -11,7 +11,7 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-PROJECT_ROOT = r"d:\GIT\private\数模"
+PROJECT_ROOT = str(ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 sys.stdout.reconfigure(encoding='utf-8') if hasattr(sys.stdout, 'reconfigure') else None
 

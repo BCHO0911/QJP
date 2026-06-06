@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 from matplotlib import rcParams
 
-PROJECT_ROOT = r"d:\GIT\private\数模"
+PROJECT_ROOT = str(ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
 # 中文字体设置

@@ -28,7 +28,7 @@ from sklearn.tree import DecisionTreeClassifier, export_text
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, f1_score
 from scipy.stats import percentileofscore
 
-PROJECT_ROOT = r"d:\GIT\private\数模"
+PROJECT_ROOT = str(ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
 from src.data_loader import load_data, add_derived_features

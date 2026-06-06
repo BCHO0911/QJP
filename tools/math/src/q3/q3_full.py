@@ -20,7 +20,7 @@ from pulp import (
     lpSum, LpStatus, value, PULP_CBC_CMD
 )
 
-PROJECT_ROOT = r"d:\GIT\private\数模"
+PROJECT_ROOT = str(ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
 ROOT = Path(__file__).resolve().parents[2]

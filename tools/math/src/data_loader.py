@@ -2,9 +2,12 @@
 """
 数据加载与预处理模块
 """
-import pandas as pd
+from pathlib import Path
+
 import numpy as np
-import os
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[2]
 
 # 按Excel列位置定义列名（37列）
 ENGLISH_COLUMNS = [
@@ -67,7 +70,19 @@ LIPID_RANGES = {
 def load_data(path=None):
     """加载并清洗数据"""
     if path is None:
-        path = r"d:\GIT\private\数模\题目和要求\B题\B题-附件.xlsx"
+        candidates = [
+            ROOT / '题目和要求' / 'B题' / 'B题-附件.xlsx',
+            ROOT / 'tools' / 'math' / '题目和要求' / 'B题' / 'B题-附件.xlsx',
+        ]
+        for candidate in candidates:
+            if candidate.exists():
+                path = candidate
+                break
+        else:
+            raise FileNotFoundError(
+                'Cannot find B题-附件.xlsx under the repository root. '
+                'Expected it at 题目和要求/B题/B题-附件.xlsx.'
+            )
 
     df = pd.read_excel(path)
     df.columns = ENGLISH_COLUMNS
@@ -115,5 +130,7 @@ if __name__ == '__main__':
     print(f"Loaded {len(df)} samples, {len(df.columns)} columns")
     print(f"Hyperlipidemia rate: {df['hyperlipidemia'].mean():.2%}")
     print(f"Tanshi constitution count: {df['is_tanshi'].sum()}")
-    df.to_csv(r"d:\GIT\private\数模\output\data_processed.csv", index=False)
-    print("Saved to output/data_processed.csv")
+    out_dir = ROOT / 'output'
+    out_dir.mkdir(parents=True, exist_ok=True)
+    df.to_csv(out_dir / 'data_processed.csv', index=False)
+    print('Saved to output/data_processed.csv')

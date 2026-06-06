@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 import json
 
-PROJECT_ROOT = r"d:\GIT\private\数模"
+PROJECT_ROOT = str(ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
 ROOT = Path(__file__).resolve().parents[2]

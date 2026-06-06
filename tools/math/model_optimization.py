@@ -12,6 +12,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 from scipy import stats
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -23,6 +24,10 @@ warnings.filterwarnings('ignore')
 
 plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
+
+ROOT = Path(__file__).resolve().parent
+FIGURES_DIR = ROOT / 'figures'
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 np.random.seed(42)
 N = 1000
@@ -142,9 +147,9 @@ ax.annotate(f"a={a_A:.3f}",xy=(0.5,2.0),xytext=(0.5,1.2),arrowprops=dict(arrowst
 ax.annotate(f"b={b_A:.3f}",xy=(2.8,0.5),xytext=(1.3,0.5),arrowprops=dict(arrowstyle='->',lw=1.5,color='blue'),ha='center',va='bottom',fontsize=10)
 ax.set_title('中介效应路径图')
 plt.tight_layout()
-plt.savefig('figures/mediation_analysis.png',dpi=300,bbox_inches='tight')
+plt.savefig(FIGURES_DIR / 'mediation_analysis.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("  → figures/mediation_analysis.png")
+print(f"  → {FIGURES_DIR / 'mediation_analysis.png'}")
 
 
 # ============================================================
@@ -209,9 +214,9 @@ ax.set_ylim(0.6,0.8)
 for bar,val in zip(bars,cv_means):
     ax.text(bar.get_x()+bar.get_width()/2, bar.get_height()+0.005, f'{val:.4f}', ha='center', fontweight='bold')
 plt.tight_layout()
-plt.savefig('figures/gb_optimization.png',dpi=300,bbox_inches='tight')
+plt.savefig(FIGURES_DIR / 'gb_optimization.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("  → figures/gb_optimization.png")
+print(f"  → {FIGURES_DIR / 'gb_optimization.png'}")
 
 
 # ============================================================
@@ -283,9 +288,9 @@ ax.plot(mr, r_syn2, 'd--', label='Sigmoid+协同(K=2)', color='purple', linewidt
 ax.set_xlabel('月份'); ax.set_ylabel('月度下降率')
 ax.set_title('月度下降率变化'); ax.legend(); ax.grid(True,alpha=0.3); ax.set_xticks(mr)
 plt.tight_layout()
-plt.savefig('figures/decay_model_comparison.png',dpi=300,bbox_inches='tight')
+plt.savefig(FIGURES_DIR / 'decay_model_comparison.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("  → figures/decay_model_comparison.png")
+print(f"  → {FIGURES_DIR / 'decay_model_comparison.png'}")
 
 
 # ============================================================
@@ -376,9 +381,9 @@ ax.grid(True,alpha=0.3,axis='y')
 for bar,val in zip(bars,sr): ax.text(bar.get_x()+bar.get_width()/2, bar.get_height()+1, f'{val:.1f}%', ha='center', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig('figures/monte_carlo_compliance.png',dpi=300,bbox_inches='tight')
+plt.savefig(FIGURES_DIR / 'monte_carlo_compliance.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("  → figures/monte_carlo_compliance.png")
+print(f"  → {FIGURES_DIR / 'monte_carlo_compliance.png'}")
 
 # ============================================================
 # 汇总
@@ -391,4 +396,4 @@ print(f"【优化2】GB优化: 树数150→{actual_trees}, 过拟合差值 {trai
 print(f"【优化3】Sigmoid终值: 原{T1[6]:.1f} → {T2[6]:.1f}（更保守估计）")
 print(f"【优化4】协同效应: K=1→2终值 {T3[6]:.1f} → {T4[6]:.1f}（增效{ T3[6]-T4[6]:.1f}分）")
 print(f"【优化5】MC依从性: 样本1原预测{T_pred:.1f}, MC均值{mc_results[0]['mean']:.1f}, 达标率{mc_results[0]['success_rate']:.1f}%")
-print("\n全部优化完成！图表已保存至 figures/ 目录")
+print(f"\n全部优化完成！图表已保存至 {FIGURES_DIR} 目录")

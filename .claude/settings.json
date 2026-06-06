@@ -8,7 +8,15 @@
       "Bash(python C:/Users/全佳鹏/.claude/skills/word-document-processor/ooxml/scripts/pack.py \"数模/_unpacked_论文1.5\" \"d:/temp_paper.docx\")",
       "Bash(rm -f \"d:/paper_final.docx\")",
       "Bash(mv \"d:/temp_paper.docx\" \"d:/paper_final.docx\")",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(dpkg -l)",
+      "Bash(pip list *)",
+      "Bash(antiword -m UTF-8 \"形势与政策/25262《形势与政策》结课要求.doc\")",
+      "WebSearch",
+      "Bash(pip show *)",
+      "Bash(python generate_paper.py)",
+      "Bash(python generate_report.py)",
+      "Bash(python generate_marxism.py)"
     ]
   }
 }
