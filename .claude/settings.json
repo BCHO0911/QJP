@@ -16,7 +16,12 @@
       "Bash(pip show *)",
       "Bash(python generate_paper.py)",
       "Bash(python generate_report.py)",
-      "Bash(python generate_marxism.py)"
+      "Bash(python generate_marxism.py)",
+      "WebFetch(domain:github.com)",
+      "Bash(find /c/Windows/Fonts -iname \"*fang*\" -o -iname \"*sim*\" -o -iname \"*song*\" -o -iname \"*hei*\" 2>/dev/null | head -10)",
+      "Read(//c/Windows/Fonts/**)",
+      "Bash(python tools/docx2pdf_github.py \"马原/53全佳鹏.docx\" \"马原论文/53全佳鹏_github.pdf\")",
+      "Bash(python)"
     ]
   }
 }
