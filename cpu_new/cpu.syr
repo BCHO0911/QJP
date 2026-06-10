@@ -1,0 +1,546 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Reading design: cpu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cpu.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cpu"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : cpu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" in Library work.
+Entity <cpu> compiled.
+Entity <cpu> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <cpu> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <cpu> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd" line 71: Mux is complete : default of case is discarded
+INFO:Xst:2679 - Register <DBC> in unit <cpu> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram_en> in unit <cpu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <cpu> analyzed. Unit <cpu> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <cpu>.
+    Related source file is "C:/Users/Administrator/Desktop/cpu_new/cpu.vhd".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 20                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 19                                             |
+    | Clock              | clk                       (falling_edge)       |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 14-bit latch for signal <seg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 16-bit register for signal <output>.
+    Found 1-bit register for signal <ram_oe>.
+    Found 1-bit register for signal <ram_rw>.
+    Found 18-bit register for signal <ram_addr>.
+    Found 16-bit tristate buffer for signal <ram_data>.
+    Found 16-bit register for signal <imme>.
+    Found 16-bit register for signal <ir>.
+    Found 16-bit register for signal <mar>.
+    Found 16-bit adder for signal <mar$addsub0000>.
+    Found 16-bit register for signal <mbr>.
+    Found 16-bit register for signal <Mtridata_ram_data> created at line 110.
+    Found 1-bit register for signal <Mtrien_ram_data> created at line 110.
+    Found 5-bit register for signal <op>.
+    Found 16-bit register for signal <pc>.
+    Found 16-bit adder for signal <pc$addsub0000> created at line 210.
+    Found 16-bit register for signal <r0>.
+    Found 16-bit register for signal <r1>.
+    Found 16-bit register for signal <r2>.
+    Found 16-bit register for signal <r3>.
+    Found 16-bit register for signal <r4>.
+    Found 16-bit register for signal <r5>.
+    Found 16-bit register for signal <r6>.
+    Found 16-bit register for signal <r7>.
+    Found 3-bit register for signal <rx>.
+    Found 3-bit register for signal <ry>.
+    Found 3-bit register for signal <RZ>.
+    Found 16-bit register for signal <t1>.
+    Found 16-bit 8-to-1 multiplexer for signal <t1$mux0000> created at line 63.
+    Found 16-bit 8-to-1 multiplexer for signal <t1$mux0001> created at line 63.
+    Found 16-bit register for signal <t2>.
+    Found 16-bit 8-to-1 multiplexer for signal <t2$mux0000> created at line 63.
+    Found 16-bit register for signal <t3>.
+    Found 16-bit addsub for signal <t3$share0000> created at line 288.
+    Found 16-bit xor2 for signal <t3$xor0000> created at line 317.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 291 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  48 Multiplexer(s).
+	inferred  16 Tristate(s).
+Unit <cpu> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 16-bit adder                                          : 2
+ 16-bit addsub                                         : 1
+# Registers                                            : 26
+ 1-bit register                                        : 3
+ 16-bit register                                       : 18
+ 18-bit register                                       : 1
+ 3-bit register                                        : 3
+ 5-bit register                                        : 1
+# Latches                                              : 1
+ 14-bit latch                                          : 1
+# Multiplexers                                         : 3
+ 16-bit 8-to-1 multiplexer                             : 3
+# Tristates                                            : 1
+ 16-bit tristate buffer                                : 1
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:14]> with one-hot encoding.
+-------------------------
+ State | Encoding
+-------------------------
+ 0000  | 00000000000001
+ 0001  | 00000000000010
+ 0010  | 00000000010000
+ 0011  | 00000000000100
+ 0100  | 00001000000000
+ 0101  | 00010000000000
+ 0110  | 00100000000000
+ 0111  | 10000000000000
+ 1000  | 01000000000000
+ 1001  | 00000000001000
+ 1010  | 00000000100000
+ 1011  | 00000010000000
+ 1100  | 00000001000000
+ 1111  | 00000100000000
+-------------------------
+WARNING:Xst:1293 - FF/Latch <imme_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_addr_16> (without init value) has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_addr_17> (without init value) has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 3
+ 16-bit adder                                          : 2
+ 16-bit addsub                                         : 1
+# Registers                                            : 323
+ Flip-Flops                                            : 323
+# Latches                                              : 1
+ 14-bit latch                                          : 1
+# Multiplexers                                         : 3
+ 16-bit 8-to-1 multiplexer                             : 3
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <imme_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <imme_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_addr_16> (without init value) has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_addr_17> (without init value) has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <11> in Unit <LPM_LATCH_1> is equivalent to the following 2 FFs/Latches, which will be removed : <10> <7> 
+
+Optimizing unit <cpu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 8.
+FlipFlop op_0 has been replicated 1 time(s)
+FlipFlop op_1 has been replicated 1 time(s)
+FlipFlop op_4 has been replicated 1 time(s)
+FlipFlop rx_0 has been replicated 4 time(s)
+FlipFlop rx_1 has been replicated 2 time(s)
+Latch seg_11 has been replicated 2 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 336
+ Flip-Flops                                            : 336
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : cpu.ngr
+Top Level Output File Name         : cpu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 86
+
+Cell Usage :
+# BELS                             : 1678
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 26
+#      LUT2                        : 52
+#      LUT2_D                      : 6
+#      LUT2_L                      : 44
+#      LUT3                        : 467
+#      LUT3_D                      : 13
+#      LUT3_L                      : 19
+#      LUT4                        : 493
+#      LUT4_D                      : 35
+#      LUT4_L                      : 193
+#      MUXCY                       : 45
+#      MUXF5                       : 185
+#      MUXF6                       : 48
+#      VCC                         : 1
+#      XORCY                       : 48
+# FlipFlops/Latches                : 350
+#      FDC_1                       : 59
+#      FDE_1                       : 274
+#      FDP_1                       : 3
+#      LD                          : 14
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 85
+#      IBUF                        : 17
+#      IOBUF                       : 16
+#      OBUF                        : 52
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                      700  out of   8672     8%  
+ Number of Slice Flip Flops:            336  out of  17344     1%  
+ Number of 4 input LUTs:               1350  out of  17344     7%  
+ Number of IOs:                          86
+ Number of bonded IOBs:                  86  out of    250    34%  
+    IOB Flip Flops:                      14
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 336   |
+seg_mux0000<8>(seg_mux0000<8>1:O)  | NONE(*)(seg_0)         | 14    |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+mar_Acst_inv(mar_Acst_inv1_INV_0:O)| NONE(mar_0)            | 62    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.517ns (Maximum Frequency: 105.075MHz)
+   Minimum input arrival time before clock: 7.248ns
+   Maximum output required time after clock: 4.897ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.517ns (frequency: 105.075MHz)
+  Total number of paths / destination ports: 36169 / 519
+-------------------------------------------------------------------------
+Delay:               9.517ns (Levels of Logic = 7)
+  Source:            rx_0_1 (FF)
+  Destination:       output_8 (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: rx_0_1 to output_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q           16   0.591   1.069  rx_0_1 (rx_0_1)
+     LUT3:I2->O            1   0.704   0.000  Mmux_t1_mux0001_6 (Mmux_t1_mux0001_6)
+     MUXF5:I0->O           1   0.321   0.000  Mmux_t1_mux0001_4_f5 (Mmux_t1_mux0001_4_f5)
+     MUXF6:I0->O           5   0.521   0.808  Mmux_t1_mux0001_2_f6 (t1_mux0001<0>)
+     LUT4:I0->O            1   0.704   0.595  pc_and000012 (pc_and000012)
+     LUT4_D:I0->O         18   0.704   1.072  pc_and000076 (pc_and0000)
+     LUT4_D:I3->O          7   0.704   0.712  pc_mux0000<0>1 (N12)
+     LUT4:I3->O            1   0.704   0.000  pc_mux0000<8>1 (pc_mux0000<8>)
+     FDC_1:D                   0.308          pc_8
+    ----------------------------------------
+    Total                      9.517ns (5.261ns logic, 4.256ns route)
+                                       (55.3% logic, 44.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 716 / 385
+-------------------------------------------------------------------------
+Offset:              7.248ns (Levels of Logic = 6)
+  Source:            ram_data<7> (PAD)
+  Destination:       output_7 (FF)
+  Destination Clock: clk falling
+
+  Data Path: ram_data<7> to output_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           3   1.218   0.706  ram_data_7_IOBUF (N546)
+     LUT4:I0->O            1   0.704   0.455  output_mux0000<7>4 (output_mux0000<7>4)
+     LUT4:I2->O            2   0.704   0.451  output_mux0000<7>25 (output_mux0000<7>25)
+     LUT4:I3->O            1   0.704   0.455  output_mux0000<0>119_SW1 (N711)
+     LUT4_L:I2->LO         1   0.704   0.135  output_mux0000<7>53_SW0 (N622)
+     LUT4:I2->O            1   0.704   0.000  output_mux0000<7>77 (output_mux0000<7>)
+     FDC_1:D                   0.308          output_7
+    ----------------------------------------
+    Total                      7.248ns (5.046ns logic, 2.202ns route)
+                                       (69.6% logic, 30.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 66 / 50
+-------------------------------------------------------------------------
+Offset:              4.897ns (Levels of Logic = 1)
+  Source:            Mtrien_ram_data (FF)
+  Destination:       ram_data<15> (PAD)
+  Source Clock:      clk falling
+
+  Data Path: Mtrien_ram_data to ram_data<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q           16   0.591   1.034  Mtrien_ram_data (Mtrien_ram_data)
+     IOBUF:T->IO               3.272          ram_data_15_IOBUF (ram_data<15>)
+    ----------------------------------------
+    Total                      4.897ns (3.863ns logic, 1.034ns route)
+                                       (78.9% logic, 21.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'seg_mux0000<8>'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              4.368ns (Levels of Logic = 1)
+  Source:            seg_13 (LATCH)
+  Destination:       seg<13> (PAD)
+  Source Clock:      seg_mux0000<8> falling
+
+  Data Path: seg_13 to seg<13>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.676   0.420  seg_13 (seg_13)
+     OBUF:I->O                 3.272          seg_13_OBUF (seg<13>)
+    ----------------------------------------
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.53 secs
+ 
+--> 
+
+Total memory usage is 289928 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   21 (   0 filtered)
+Number of infos    :   20 (   0 filtered)
+
